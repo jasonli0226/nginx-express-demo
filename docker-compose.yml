@@ -28,6 +28,8 @@ services:
       - .:/usr/src/app
     ports:
       - "8080"
+    environment:
+      - INSTANCE=node_1
     networks:
       - app-network
 
@@ -40,6 +42,8 @@ services:
       - .:/usr/src/app
     ports:
       - "8080"
+    environment:
+      - INSTANCE=node_2
     networks:
       - app-network
 
@@ -52,6 +56,8 @@ services:
       - .:/usr/src/app
     ports:
       - "8080"
+    environment:
+      - INSTANCE=node_3
     networks:
       - app-network
 
