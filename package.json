@@ -1,0 +1,21 @@
+{
+    "name": "nginx-express-demo",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "git@gitlab.com:KwanLi/nginx-express-demo.git",
+    "author": "jason.li <jasonli772016@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "start": "npx ts-node src/server.ts",
+        "build": "tsc"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.13",
+        "@types/node": "^16.10.3",
+        "ts-node": "^10.2.1",
+        "typescript": "^4.4.3"
+    },
+    "dependencies": {
+        "express": "^4.17.1"
+    }
+}
