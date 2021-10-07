@@ -1,7 +1,25 @@
 version: '3'
 
 services:
-  node1:
+
+  nginx:
+    build:
+      context: .
+      dockerfile: .docker/nginx.dockerfile
+    links:
+      - node-1:node-1
+      - node2-:node-2
+      - node-3:node-3
+    depends_on:
+      - node-1
+      - node-2
+      - node-3
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+
+  node-1:
     build:
       context: .
       dockerfile: Dockerfile
@@ -9,4 +27,34 @@ services:
     volumes:
       - .:/usr/src/app
     ports:
-      - "8080:8080"
+      - "8080"
+    networks:
+      - app-network
+
+  node-2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8080"
+    networks:
+      - app-network
+
+  node-3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8080"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
