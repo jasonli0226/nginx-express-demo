@@ -9,8 +9,7 @@ RUN npm install
 COPY . .
 
 RUN npm run build
-RUN ls -al
 
 EXPOSE 8080
 
-CMD [ "node", "build/server.js" ]
+CMD [ "node", "./build/server.js" ]
