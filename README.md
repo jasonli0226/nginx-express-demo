@@ -5,6 +5,7 @@ This is a demo using NodeJS Express with Nginx load balancing.
 ## Run with Docker Compose
 
 ```Bash
+yarn build
 docker compose up -d
 
 ```

@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "module": "commonjs",
+        "rootDir": "src",
         "outDir": "build",
         "target": "es5",
         "lib": ["es6", "dom"],
@@ -16,5 +17,6 @@
         "suppressImplicitAnyIndexErrors": true,
         "noUnusedLocals": true
     },
+    "include": ["src/**/*ts"],
     "exclude": ["node_modules", "build", "scripts", "index.js"]
 }
